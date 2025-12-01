@@ -1,0 +1,36 @@
+# APS Final — CRUD Produtos (Laravel)
+
+## Requisitos
+- PHP 8.x
+- Composer
+- MySQL
+- XAMPP / Laragon / etc.
+
+## Instalação
+1. Clone o repositório:
+   git clone https://github.com/seu_usuario/seu_repo.git
+2. Entre na pasta:
+   cd seu_repo
+3. Instale dependências:
+   composer install
+4. Copie .env:
+   cp .env.example .env
+5. Configure o banco no .env (DB_CONNECTION=mysql, DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+6. Gere a chave:
+   php artisan key:generate
+7. Rode migrations:
+   php artisan migrate
+8. Crie link do storage:
+   php artisan storage:link
+
+## Como usar
+- Abra `http://127.0.0.1:8000` (ou `php artisan serve`)
+- Registre um usuário em `/register`
+- Faça login em `/login`
+- No dashboard (`/products`) você pode criar/listar/editar/excluir produtos.
+- Upload de imagens: somente PNG/JPG; armazenadas em `storage/app/public/produtos`. Não aparece a imagem, pois não consegui mas ela salva no banco.
+- Cookie: ao ver um produto, um cookie `ultimo_produto` é salvo por 30 dias — a listagem destaca esse produto.
+
+## Observações
+- Não inclua `.env` nem `vendor/` no repositório.
+- O projeto usa MySQL (confirme a configuração em `.env`).
